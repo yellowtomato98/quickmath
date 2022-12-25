@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="http://localhost:3000/styles.css" />
+    <!-- title -->
+    <title>chatroom</title>
+    <!-- js -->
+    <script>
+        const roomName = "<%= roomName %>"
+        const problems = "<%= problems %>"
+    </script>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="http://localhost:3000/script.js"></script>
+    <script defer src="http://localhost:3000/game.js"></script>  <!-- can't defer to load game -->
+    <script defer src="http://localhost:3000/game-events.js"></script> <!-- so separate game from events -->
+</head>
+<body>
+    <div id="top-bar">
+        <div id="logo">Quickmath</div>
+        <div id="username"></div>
+    </div>
+
+    <div id="game-screen">
+        <div id="game-data">
+            <div id="timer">Time: </div>
+            <div id="leaderboard-container">
+                <div id="leaderboard-container-header">Leaderboard</div>
+                <div id="leaderboard"></div>
+            </div>
+        </div>
+    
+        <div id="game">
+            <span id="num1" style="padding:7px"></span>
+            + <span id="num2" style="padding:7px"></span> 
+            = <input type="text" id="user-input">
+        </div>
+    </div>
+
+    <div id="end-screen">
+        <div id="final-leaderboard-container">
+            <div id="final-leaderboard-container-header">Final Rankings</div>
+            <div id="final-leaderboard"></div>
+        </div>
+        <div id="final-countdown"></div>
+    </div>
+
+    <!-- <script>
+        myGame = new Game();
+        myGame.main();
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,311 @@
+body {
+    padding: 0;
+    margin: 0;
+    /* display: flex;  */
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#top-bar {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    margin-top: 1vh;
+}
+
+#logo {
+    flex: 1;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 800;
+    color: black;
+    cursor: pointer;
+}
+
+#username {
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+}
+
+#message-container-header {
+    margin: auto;
+    width: 100%; 
+    height: 25px;
+    margin-top: 10px;
+    padding-top: 5px;
+    overflow-y:auto;
+    text-align:center;
+    font-weight:700;
+    font-size:18px;
+    background-color: rgb(248,248,248);
+    box-shadow: 0 0 5px lightgray;
+}
+
+#message-container {
+    margin: auto;
+    width: 100%; 
+    height: 55vh;
+    overflow-y:auto;
+    border: 1px solid lightgrey;
+}
+
+#message-container div {
+    /* background-color: #ccc; */
+    padding: 5px;
+    font-size: 15px;
+    border-bottom: 1px solid lightgrey;
+}
+
+/* #message-container div:nth-child(2n){
+    background-color: #fff;
+} */
+
+#send-container {
+    margin: auto;
+    width: 100%; 
+    height: 30px;
+    text-align: center;
+    border: 1px solid lightgrey;
+    padding-top: 5px;
+}
+
+#message-input {
+    width: 60%;
+}
+
+#room-input {
+    width: 100%;
+    text-align: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 10px;
+}
+
+#rooms {
+    margin: auto;
+    width: 80%; 
+    height: 55vh;
+    overflow-y:auto;
+    border: 0.5px solid lightgrey;
+    box-shadow: 0 0 2px lightgray;
+}
+
+#room-container div {
+    background-color: #fff;
+    border: 0.25px solid lightgray;
+    padding: 10px;
+}
+
+#room-container div:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+#room-container-header {
+    color:black;
+    padding: 10px;
+    font-weight: 700;
+    background-color: rgb(248,248,248);
+    box-shadow: 0 0 5px lightgray;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#reload {
+    width: 100%;
+    text-align: center;
+    margin-top: 10vh;
+    padding: 10px;
+}
+
+#current-users-header {
+    font-size: 23px;
+    font-weight: 500;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 5px;
+    margin-bottom: 2vh;
+}
+
+#invite-friends {
+    margin-top: 5vh;
+    font-size: 22px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 2vh;
+}
+
+#invite-friends-link{
+    color: hotpink;
+    text-decoration: underline;
+}
+
+#start-round{
+    margin: auto;
+    text-align: center;
+    margin-top: 5vh;
+    /* border: 1px solid red; */
+}
+
+#start-round-button{
+    width: 20%;
+    height: 30px;
+    background-color: rgb(128, 0, 128);
+    border: none;
+    color: white;
+    box-shadow: 0 0 2px rgb(89,0,89);
+    transition: background-color 0.5s;
+}
+
+#start-round-button:hover{
+    background-color: rgb(89, 0, 89);
+}
+
+#hide-me{
+    visibility: hidden;
+}
+
+#game-data{
+    display: flex;
+    margin-top: 3vh;
+    /* border: 1px solid red; */
+}
+
+#timer{
+    font-size: 17px;
+    width: 10vw;
+    margin-left: 5vw;
+    /* border: 1px solid red; */
+}
+
+#leaderboard-container{
+    margin-left: 67vw;
+    width: 15vw;
+    font-size: 17px;
+    /* border: 1px solid red; */
+    text-align: center;
+    height: 25vh;
+}
+
+#leaderboard-container-header{
+    /* border: 1px solid red; */
+    padding: 8px;
+}
+
+.flex-container {
+    display: flex;
+    margin-top: 5vh;
+    /* border: 2px solid red; */
+    padding-top: 10px;
+}
+
+.flex-child {
+    flex: 1;
+    /* border: 2px solid yellow; */
+}  
+
+.flex-child:first-child {
+    max-width: 25vw;
+    margin-right: 7.5vw;
+    margin-left: 15vw;
+    flex-direction: column-reverse;
+} 
+
+.flex-child:nth-child(2) {
+    margin-right: 20vw;
+}
+
+.button {
+    width: 20%;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(193, 99, 255);
+    color: white;
+    transition: background-color 0.5s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(170, 44, 254);
+}
+
+#game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vh;
+    height: 10%;
+    text-align: center;
+    font-size: 40px;
+    border-style:solid;
+    border-radius:1px;
+    border-color:black;
+    padding: 5px;
+    background-color:lightgrey;
+}
+
+#user-input{
+    font-family: 'Roboto', sans-serif;
+    width: 10vw;
+    height: 10%;
+    font-size: 40px;
+    background-color:white;
+    margin-left: 7px;
+    border: none;
+    border-radius: 3px;
+}
+
+#game-screen{
+    visibility: visible;
+}
+
+#end-screen{
+    visibility: hidden;
+}
+
+#final-leaderboard-container {
+    margin: auto;
+    position: absolute; 
+    top: 20vh;
+    left: 38vw;
+    width: 25%; 
+    height: 45vh;
+    overflow-y:auto;
+    border: 0.5px solid lightgrey;
+    box-shadow: 0 0 2px lightgray;
+}
+
+#final-leaderboard div {
+    background-color: #fff;
+    border: 0.25px solid lightgray;
+    padding: 10px;
+}
+
+#final-leaderboard div:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+#final-leaderboard-container-header {
+    color:black;
+    padding: 10px;
+    font-weight: 700;
+    text-align: center;
+    background-color: rgb(248,248,248);
+    box-shadow: 0 0 5px lightgray;
+}
+
+#final-countdown {
+    position: absolute; 
+    font-size: 15px;
+    top: 70vh;
+    left: 44vw;
+    width: 25%; 
+    height: 45vh;
+}

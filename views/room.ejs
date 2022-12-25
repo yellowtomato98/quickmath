@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="http://localhost:3000/styles.css" />
+    <!-- title -->
+    <title>chatroom</title>
+    <!-- js -->
+    <script>
+        const roomName = "<%= roomName %>"
+    </script>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="http://localhost:3000/script.js"></script>
+</head>
+<body>
+    <div id="top-bar">
+        <div id="logo">Quickmath</div>
+        <div id="username"></div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-child">
+            <div id="message-container-header">Room Chat</div>
+            <div id="message-container"></div>
+            <form id="send-container">
+                <input type="text" id="message-input" autocomplete="off">
+                <button type="submit" id="send-button">Send</button>
+            </form>
+        </div>
+        <div class="flex-child">
+          <div id="current-users-header">current users:</div>
+          <div id="current-users">
+            <% Object.keys(users).forEach(uid => { %>
+                <% if (uid == host){ %>
+                    <div>(host) <%= users[uid]["username"] %></div>
+            <%    } %>
+            <% }) %>
+            <% Object.keys(users).forEach(uid => { %>
+            <%    if (uid != host){ %>
+                    <div> <%= users[uid]["username"] %></div>
+            <%    } %>
+            <% }) %>
+          </div>
+          <div id="invite-friends">invite link:</div>
+          <div id="invite-friends-link">
+            <a href="/room/<%=roomName%>" id="invite-friends-link">
+                localhost:3000/room/<%=roomName%>
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <div id="start-round">
+        <form action="/game" method="POST">
+            <input type="text" id="hide-me" name="room" value="<%=roomName%>">
+            <button type="submit" class="button" id="start-round-button">START ROUND</button>
+        </form>
+    </div>
+</body>
+</html>
