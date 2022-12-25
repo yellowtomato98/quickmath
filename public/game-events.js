@@ -5,6 +5,7 @@ console.log(problems)
 // as soon as the screen is loaded, start game
 myGame = new Game(JSON.parse(problems), 120)
 myGame.main();
+socket.emit('join-game', roomName)
 
 const userinput = document.getElementById("user-input");
 const leaderboard = document.getElementById("leaderboard")

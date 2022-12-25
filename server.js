@@ -145,6 +145,10 @@ io.on('connection', socket => {
         socket.join('/')
     })
 
+    socket.on('join-game', room => {
+        socket.join(room)
+    })
+
     socket.on('update-score', roomName => {
         // method to update scores
         // console.log("hi updating score server")

@@ -109,6 +109,8 @@ socket.on('game-created', room => {
     window.location.href='/game/'+room
 })
 
+
+
 // socket.on('game-created-client', room => {
 //     window.location.href='/game/'+room
 // })
