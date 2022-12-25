@@ -166,8 +166,9 @@ io.on('connection', socket => {
         })
         // console.log(ranks)
         // sort after broadcasting (idk why it doesn't persist)
-        socket.broadcast.to(roomName).emit('render-leaderboard', ranks)
+        // socket.broadcast.to(roomName).emit('render-leaderboard', ranks)
         socket.emit('render-leaderboard', ranks)
+        io.in(roomName).emit('render-leaderboard', ranks)
     })
 
     socket.on('end-game', roomName => {
@@ -178,10 +179,13 @@ io.on('connection', socket => {
         console.log("rendering final ranks")
         var ranks = []
         Object.keys(rooms[roomName].users).forEach(UID => {
-            ranks.push([rooms[roomName].users[userData["UID"]].score, users[UID].username])
+            ranks.push([rooms[roomName].users[UID].score, users[UID].username])
         })
-        socket.broadcast.to(roomName).emit('final', ranks)
-        socket.emit('final', ranks)
+        if (userData["UID"]==rooms[roomName].host){
+            // socket.broadcast.to(roomName).emit('final', ranks)
+            // socket.emit('final', ranks)
+            io.in(roomName).emit('final', ranks)
+        }
     })
 
     socket.on('disconnect', () => {
